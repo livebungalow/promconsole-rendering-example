@@ -1,4 +1,6 @@
-An example of oddly rendered time series in PromConsole.Graph.
+An example of oddly rendered time series in PromConsole.Graph,
+in support of [prometheus issue 7711][].
+
 How to use:
 
     docker pull prom/prometheus:v2.19.3
@@ -13,3 +15,5 @@ The file screenshot.png in this directory shows the left edge of what I
 see there.  The green time series is unexpectedly elevated -- since it
 has no other time series under it, I expect it to be resting on the
 x-axis, like the red time series does.
+
+[prometheus issue 7711]: https://github.com/prometheus/prometheus/issues/7711
