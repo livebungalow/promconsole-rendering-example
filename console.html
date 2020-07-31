@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{template "prom_console_head" .}}
+</head>
+<body>
+
+<div id="graph"></div>
+<script>
+/* hack to insert our test data */
+PromConsole.Graph.prototype.buildQueryUrl = function(expr) {
+  return "/consoles/data.json";
+};
+new PromConsole.Graph({
+  node: document.querySelector("#graph"),
+  expr: "example",
+  renderer: "area",
+  name: "[[ code_version ]]",
+  min: 0,
+  end: 1596226258,
+})
+</script>
+
+</body>
+</html>
