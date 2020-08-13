@@ -17,7 +17,7 @@ Here's what I see there:
 ![screenshot](./screenshot.png)
 
 The green and greenish-blue time series are unexpectedly elevated --
-since they has no other time series under them, I expect them to be
+since they have no other time series under them, I expect them to be
 resting on the x-axis, like the red time series does.
 
 This example uses a hack to inject `data.json` as a `query_range` response.
