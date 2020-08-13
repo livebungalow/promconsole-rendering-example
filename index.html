@@ -5,18 +5,27 @@
 </head>
 <body>
 
-<div id="graph"></div>
+<div id="codeVersions"></div>
 <script>
 /* hack to inject our test data */
 PromConsole.Graph.prototype.buildQueryUrl = function(expr) {
   return "/consoles/data.json";
 };
+/*
+  copy of the code that generated the request that data.json was copied from,
+  with endTime added (to accommodate your current time being much later than
+  when that query was run)
+*/
 new PromConsole.Graph({
-  node: document.querySelector("#graph"),
-  expr: "example",
+  node: document.querySelector("#codeVersions"),
+  expr: "sum by (code_version) (info)",
   renderer: "area",
   name: "[[ code_version ]]",
+  yAxisFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
+  yHoverFormatter: PromConsole.NumberFormatter.humanizeNoSmallPrefix,
   min: 0,
+  yTitle: "Number of containers",
+  endTime: 1597326750
 })
 </script>
 
