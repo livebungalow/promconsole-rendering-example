@@ -16,9 +16,11 @@ Here's what I see there:
 
 ![screenshot](./screenshot.png)
 
-The green and greenish-blue time series are unexpectedly elevated --
-since they have no other time series under them, I expect them to be
-resting on the x-axis, like the red time series does.
+The green and greenish-blue time series are unexpectedly elevated.  The
+green one mostly has no other times series under it, so I expect it to
+be mostly resting on the x-axis.  The greenish-blue time series only has
+the green one under it, so I expect it to be resting on the green one,
+not separated from it by a large vertical gap.
 
 This example uses a hack to inject `data.json` as a `query_range` response.
 That data was copied from a request with
